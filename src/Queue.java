@@ -6,7 +6,7 @@ public class Queue<T> implements QueueInterface<T> {
     private Node lastNode;
     private T nodeDataTemp = null;
     private int numberOfEntries;
-
+//this is the queue
     public Queue() {
         firstNode = null;
         lastNode = null;
