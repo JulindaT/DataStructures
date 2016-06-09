@@ -2,10 +2,10 @@
  * Created by Sean on 6/1/2016.
  */
 public class Queue<T> implements QueueInterface<T> {
-    private Node firstNode;
-    private Node lastNode;
+    protected Node firstNode;
+    protected Node lastNode;
     private T nodeDataTemp = null;
-    private int numberOfEntries;
+    protected int numberOfEntries;
 //this is the queue
     public Queue() {
         firstNode = null;

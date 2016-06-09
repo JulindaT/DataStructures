@@ -4,11 +4,11 @@
 public class List<T> extends Queue<T> implements ListInterface<T>{
 
     private Node getNodeAt(int position) {
-
+        return null;
     }
 
     public void add(T newEntry) {
-
+        enqueue(newEntry);
     }
 
     public void add(int position, T newEntry) {
@@ -32,7 +32,7 @@ public class List<T> extends Queue<T> implements ListInterface<T>{
     }
 
     public int getLength() {
-        return 0;
+        return countOfEntries();
     }
 
     public boolean isEmpty() {
@@ -40,6 +40,17 @@ public class List<T> extends Queue<T> implements ListInterface<T>{
     }
 
     public T[] toArray() {
-        return new T[0];
+        @SuppressWarnings("unchecked")
+        T[] arr = (T[])new Object[getLength()];
+        int index = 0;
+        Node currentNode = firstNode;
+        while ((index < numberOfEntries) && (currentNode != null))
+        {
+            arr[index] = (T) currentNode.getData();
+            currentNode = currentNode.getLinkedNode();
+            index++;
+        } // end while
+
+        return arr;
     }
 }

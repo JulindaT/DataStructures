@@ -10,15 +10,22 @@ public class Main {
 //        computesum();
 
 
-        Queue myQueue = new Queue();
-        System.out.println("adding Hi and Hello to Queue...");
-        myQueue.enqueue("Hi");
-        myQueue.enqueue("Hello");
-        while (myQueue.countOfEntries() > 0) {
-            System.out.println("There are now " + myQueue.countOfEntries() + " entries");
-            System.out.println("Removed " + myQueue.dequeue());
-        }
-        System.out.println("Queue is empty!");
+//        Queue myQueue = new Queue();
+//        System.out.println("adding Hi and Hello to Queue...");
+//        myQueue.enqueue("Hi");
+//        myQueue.enqueue("Hello");
+//        while (myQueue.countOfEntries() > 0) {
+//            System.out.println("There are now " + myQueue.countOfEntries() + " entries");
+//            System.out.println("Removed " + myQueue.dequeue());
+//            System.out.println("Queue is empty!");
+//        }
+
+        List myList = new List();
+
+        myList.enqueue("Strang");
+
+        myList.toArray();
+
     }
 
 
