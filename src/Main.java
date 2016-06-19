@@ -23,8 +23,15 @@ public class Main {
         List myList = new List();
 
         myList.enqueue("Strang");
+        myList.add("Strang2");
+
+        System.out.println(myList.getEntry(2));
 
         myList.toArray();
+
+        System.out.println("Java".hashCode());
+        System.out.println((int)"Java".charAt(0));
+
 
     }
 

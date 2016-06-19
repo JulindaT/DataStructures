@@ -4,7 +4,23 @@
 public class List<T> extends Queue<T> implements ListInterface<T>{
 
     private Node getNodeAt(int position) {
-        return null;
+        int currentPosition;
+        Node currentNode;
+        if(!isEmpty()) {
+            currentPosition = 1;
+            currentNode = firstNode;
+            while(currentPosition <= position){
+                if(currentPosition == position){
+                    return currentNode;
+                }
+                else{
+                    currentNode=currentNode.getLinkedNode();
+                    currentPosition++;
+                }
+            }
+        }
+        else {return null;}
+    return currentNode;
     }
 
     public void add(T newEntry) {
@@ -16,6 +32,10 @@ public class List<T> extends Queue<T> implements ListInterface<T>{
     }
 
     public T getEntry(int location) {
+        if(getNodeAt(location)!=null){
+            Node tempNode = getNodeAt(location);
+            return (T) tempNode.getData();
+        }
         return null;
     }
 
@@ -35,16 +55,12 @@ public class List<T> extends Queue<T> implements ListInterface<T>{
         return countOfEntries();
     }
 
-    public boolean isEmpty() {
-        return false;
-    }
-
     public T[] toArray() {
         @SuppressWarnings("unchecked")
         T[] arr = (T[])new Object[getLength()];
         int index = 0;
         Node currentNode = firstNode;
-        while ((index < numberOfEntries) && (currentNode != null))
+        while ((currentNode != null) && (index < numberOfEntries))
         {
             arr[index] = (T) currentNode.getData();
             currentNode = currentNode.getLinkedNode();
