@@ -32,23 +32,83 @@ public class List<T> extends Queue<T> implements ListInterface<T>{
     }
 
     public T getEntry(int location) {
+        T result = null;
         if(getNodeAt(location)!=null){
             Node tempNode = getNodeAt(location);
-            return (T) tempNode.getData();
+            result = (T) tempNode.getData();
         }
-        return null;
+        return result;
     }
 
     public void remove(int position) {
+        Node currentNode = getNodeAt(position);
+        if(currentNode!= null && currentNode!=firstNode && currentNode.getLinkedNode()!= null)
+        {
+            Node replacementNode = currentNode.getLinkedNode();
+            getNodeAt(position-1).setLinkedNode(replacementNode);
+        }
+        else if(currentNode != null && currentNode !=firstNode && currentNode.getLinkedNode()==null)
+        {
+            getNodeAt(position-1).setLinkedNode(null);
+        }
+        else if (currentNode == lastNode){
+            lastNode = null;
+        }
+        else if (currentNode == firstNode){
+            firstNode = null;
+        }
 
     }
 
     public void replace(int position, T newEntry) {
-
+        getNodeAt(position).setNodeData(newEntry);
     }
 
     public boolean contains(T entry) {
-        return false;
+        boolean result = false;
+        Node currentNode = firstNode;
+        if(currentNode != null){
+            int position = 1;
+            while (position <= countOfEntries()){
+                if(currentNode.getData().equals(entry)){
+                    result = true;
+                }
+                else if(currentNode.getLinkedNode() != null){
+                    currentNode = currentNode.getLinkedNode();
+                }
+                position++;
+            }
+        }
+        return result;
+    }
+
+    public T find(T entry){
+        T result = null;
+        int position = 1;
+        while (position <= getLength()){
+            if(entry.equals(getEntry(position))){
+                result = getEntry(position);
+            }
+            else position++;
+        }
+        return result;
+
+    }
+
+    public int findPosition(T entry){
+        int result = 0;
+        int position = 1;
+        while (position <= getLength()){
+            if(entry.equals(getEntry(position))){
+                result = position;
+            }
+//            boolean anotherentry = (Address)  entry.
+            T tempEntry = getEntry(position);
+            boolean temp = entry.equals(getEntry(position));
+            position++;
+        }
+        return result;
+
     }
 
     public int getLength() {

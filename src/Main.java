@@ -33,6 +33,38 @@ public class Main {
         System.out.println((int)"Java".charAt(0));
 
 
+        HashTable myTable = new HashTable();
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("Bob", "Smith", "555-235-1111","bsmith@somewhere.com"));
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("Jane", "Williams", "555-235-1112","jw@something.com"));
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("Mohammed", "al-Salam", "555-235-1113","mas@someplace.com"));
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("Pat", "Jones", "555-235-1114","pjones@homesweethome.com"));
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("Billy", "Kidd", "555-235-1115","billy_the_kid@nowhere.com"));
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("H.", "Houdini", "555-235-1116","houdini@noplace.com"));
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("Jack", "Jones", "555-235-1117","jjones@hill.com"));
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("Jill", "Jones", "555-235-1118","jillj@hill.com"));
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("John", "Doe", "555-235-1119","jdoe@somedomain.com"));
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("Jane", "Doe", "555-235-1120","jdoe@somedomain.com"));
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("Test", "Case", "555-235-1121","Test_Case@testcase.com"));
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("Nadezhda", "Kanachekhovskaya", "555-235-1122","dr.nadezhda.kanacheckovskaya@somehospital.moscow.ci.ru"));
+        System.out.println(myTable.toString());
+        myTable.insert(new Address("Jo", "Wu", "555-235-1123","wu@h.com"));
+        System.out.println(myTable.toString());
+        myTable.removeEntry(new Address("Mohammed", "al-Salam", "555-235-1113","mas@someplace.com"));
+        System.out.println(myTable.toString());
+
+
     }
 
 
